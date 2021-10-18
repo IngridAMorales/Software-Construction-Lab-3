@@ -9,6 +9,7 @@ PersonList::PersonList(){
     capacity = 2;
     numPeople = 0;
     theList = new Person*[capacity];
+    delete[] theList;
 }
 
 PersonList::~PersonList(){
