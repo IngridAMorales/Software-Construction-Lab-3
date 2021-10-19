@@ -52,8 +52,8 @@ void PersonList::addPerson(const char* child_name, const char* father_name, cons
 void PersonList::insertIntoList(Person *newPerson){
     if(numPeople == capacity) expand(&theList, &capacity);
 
-    theList[numPeople] = newPerson;
-    numPeople++;
+    theList[numPeople++] = newPerson;
+    
 }
 
 void PersonList::printLineage(const char* person){
