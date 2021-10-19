@@ -6,7 +6,8 @@ using std::cout;
 using std::endl;
 
 Person::Person(const char *name_, Person* father_, Person* mother_){
-    name = new char[strlen(name_)];
+    name = new char[strlen(name_)+1];
+    name[strlen(name_)]= '\0';
     strcpy(name, name_);
     father = father_;
     mother = mother_;

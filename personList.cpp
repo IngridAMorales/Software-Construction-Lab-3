@@ -9,10 +9,11 @@ PersonList::PersonList(){
     capacity = 2;
     numPeople = 0;
     theList = new Person*[capacity];
-    delete[] theList;
+ 
 }
 
 PersonList::~PersonList(){
+    delete[] theList; 
 }
 
 void PersonList::addPerson(const char* child_name, const char* father_name, const char* mother_name){
@@ -46,9 +47,6 @@ void PersonList::addPerson(const char* child_name, const char* father_name, cons
     father->addChild(newChild);
     mother->addChild(newChild);
 
-    delete father;
-    delete mother;
-    delete newChild;
 }
 
 void PersonList::insertIntoList(Person *newPerson){
