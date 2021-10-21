@@ -6,13 +6,16 @@ using std::cout;
 using std::endl;
 
 PersonList::PersonList(){
-    capacity = 5;
+    capacity = 2;
     numPeople = 0;
     theList = new Person*[capacity];
  
 }
 
 PersonList::~PersonList(){
+    for(int i = 0; i < numPeople; i++){
+    	delete theList[i];
+    }
     delete[] theList; 
 }
 

@@ -17,7 +17,7 @@ class Person{
         const char* getName(){return name;}
 
         void addChild(Person *newChild);
-
+	
         void printAncestors();
         void printDecendents();
 
