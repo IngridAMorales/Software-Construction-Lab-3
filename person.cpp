@@ -16,13 +16,16 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
     children = new Person*[capacity];
 }
 
-Person::~Person(){
-    delete children;
+Person::~Person(){  
+    delete[] children;
+    delete[] name;  
+     
 }
 
 void Person::addChild(Person *newChild){
     if(numChildren == capacity) expand(&children, &capacity);
     children[numChildren++] = newChild;
+   
 }
 
 void Person::printAncestors(){
