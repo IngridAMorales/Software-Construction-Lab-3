@@ -6,16 +6,13 @@ using std::cout;
 using std::endl;
 
 PersonList::PersonList(){
-    capacity = 2;
+    capacity = 5;
     numPeople = 0;
     theList = new Person*[capacity];
  
 }
 
 PersonList::~PersonList(){
-    for(int i = 0; i < capacity; i++){ 
-	delete theList[i]; 
-    }
     delete[] theList; 
 }
 
@@ -55,7 +52,6 @@ void PersonList::insertIntoList(Person *newPerson){
     if(numPeople == capacity) expand(&theList, &capacity);
 
     theList[numPeople++] = newPerson;
-    newPerson = nullptr; 
 }
 
 void PersonList::printLineage(const char* person){

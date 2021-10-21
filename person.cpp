@@ -11,7 +11,7 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
     strcpy(name, name_);
     father = father_;
     mother = mother_;
-    capacity = 1;
+    capacity = 2;
     numChildren = 0;
     children = new Person*[capacity];
 }
@@ -23,7 +23,7 @@ Person::~Person(){
 }
 
 void Person::addChild(Person *newChild){
-    if(numChildren == capacity) expand(&children, &capacity);
+   if(numChildren == capacity) expand(&children, &capacity);
     children[numChildren++] = newChild;
    
 }
